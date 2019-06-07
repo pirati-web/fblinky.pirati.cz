@@ -1,0 +1,21 @@
+---
+layout: default
+rbar:
+  #- calendar
+  - fb
+  - infobox  
+description: 
+---
+
+<div class="row">
+  <div class="medium-12 large-8 columns">
+    <section class="o-section o-section--spaceBot">
+
+    </section>
+  </div>
+  {% if page.rbar %}
+  <div class="medium-12 large-4 columns">
+    {% include right-bar/rbar.html param='rbar' %}
+  </div>
+  {% endif %}
+</div>

@@ -1,1 +1,1 @@
-fblinky.pirati.cz
+# fblinky.pirati.cz
