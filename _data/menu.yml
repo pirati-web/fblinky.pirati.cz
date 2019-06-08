@@ -13,10 +13,18 @@ main:
   - link: /
     name: Úvod
     class: hide-for-medium    
-  - link: /aktuality/
-    name: Aktuality
-    match: aktuality
-
+  - link: /nove/
+    name: Nové
+    match: nove
+  - link: /clenove/
+    name: Členové
+    match: clenove
+  - link: /ms-kraje/
+    name: MS & Kraje
+    match: ms-kraje
+  - link: /mapa/
+    name: Mapa
+    match: mapa   
 bottom:
   - class: small-12 medium-4
     title: Připoj se
