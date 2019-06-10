@@ -80,8 +80,6 @@ GEM
     jekyll-feed (0.11.0)
       jekyll (~> 3.3)
     jekyll-paginate (1.1.0)
-    jekyll-redirect-from (0.14.0)
-      jekyll (~> 3.3)
     jekyll-sanity (1.2.0)
       jekyll (~> 3.1)
     jekyll-sass-converter (1.5.2)
@@ -108,10 +106,6 @@ GEM
     minitest (5.11.3)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
-    octopress-hooks (2.6.2)
-      jekyll (>= 2.0)
-    octopress-paginate (1.2.0)
-      octopress-hooks
     parallel (1.13.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -150,18 +144,16 @@ DEPENDENCIES
   image_optim
   image_optim_bin
   image_optim_pack
-  jekyll (~> 3.8.3)
+  jekyll (~> 3.8.5)
   jekyll-assets (= 3.0.11)
   jekyll-environment-variables
   jekyll-feed (~> 0.6)
   jekyll-paginate
-  jekyll-redirect-from
   jekyll-sitemap
   jekyll-theme-pirati (= 7.4.0)
   json
   mini_magick
-  octopress-paginate
-  sprockets (~> 4.0.0.beta)
+  sprockets (= 4.0.0.beta8)
   tzinfo-data
   uglifier (~> 4.0.0)
 
