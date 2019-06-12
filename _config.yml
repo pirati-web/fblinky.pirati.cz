@@ -49,7 +49,8 @@ exclude:
   - Gemfile.lock
   - vendor
 
-permalink: /tiskove-zpravy/:title/
+permalink: /ms-kraje/:path/
+permalink: /clenove/:path/
 collections:
   people:
     output: true

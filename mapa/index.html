@@ -1,0 +1,161 @@
+---
+layout: default
+title: Mapa
+description: 
+keywords: 
+tags: Mapa
+cities:
+  - title: Praha
+  - title: České Budějovice
+  - title: Plzeň
+  - title: Karlovy Vary
+  - title: Ústí nad Labem
+  - title: Liberec
+  - title: Hradec Králové 
+  - title: Pardubice
+  - title: Jihlava
+  - title: Brno
+  - title: Olomouc
+  - title: Ostrava
+  - title: Zlín
+districts: 
+  - title: Hlavní město Praha
+  - title: Středočeský kraj
+    city: Praha
+  - title: Jihočeský kraj
+    city: České Budějovice
+  - title: Plzeňský kraj
+    city: Plzeň
+  - title: Karlovarský kraj
+    city: Karlovy Vary
+  - title: Ústecký kraj
+    city: Ústí nad Labem
+  - title: Liberecký kraj
+    city: Liberec
+  - title: Královéhradecký kraj
+    city: Hradec Králové 
+  - title: Pardubický kraj
+    city: Pardubice
+  - title: Kraj Vysočina
+    city: Jihlava
+  - title: Jihomoravský kraj
+    city: Brno
+  - title: Olomoucký kraj
+    city: Olomouc
+  - title: Moravskoslezský kraj
+    city: Ostrava
+  - title: Zlínský kraj
+    city: Zlín
+---
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 60%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <div id="map"></div>
+    <script>
+
+      // The following example creates complex markers to indicate beaches near
+      // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+      // to the base of the flagpole.
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+
+          center: {lat: 49.952531, lng: 15.268754}
+        });
+
+
+        setMarkers(map);
+      }
+
+      // Data for the markers consisting of a name, a LatLng and a zIndex for the
+      // order in which these markers should display on top of each other.
+      var beaches = [
+
+      <?php
+
+        foreach($kraje as $key => $kraj){
+          foreach($items[$key] as $item){
+            if(isset($item[7])){
+              echo "['".$item[1]."', ".$item[7].", ".$item[8].", 4],\n"; 
+            }
+            
+            continue;
+          }
+        }
+      ?>
+
+      ];
+
+      function setMarkers(map) {
+        // Adds markers to the map.
+
+        // Marker sizes are expressed as a Size of X,Y where the origin of the image
+        // (0,0) is located in the top left of the image.
+
+        // Origins, anchor positions and coordinates of the marker increase in the X
+        // direction to the right and in the Y direction down.
+        var image = {
+          url: 'img_4670501.png',
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(32, 32),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32)
+        };
+        // Shapes define the clickable region of the icon. The type defines an HTML
+        // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+        // The final coordinate closes the poly by connecting to the first coordinate.
+        var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };
+
+
+
+        for (var i = 0; i < beaches.length; i++) {
+          var beach = beaches[i];
+          var marker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            //type: 'info'
+            map: map,
+            //icon: iconBase + 'info-i_maps.png'
+            icon: image,
+            shape: shape,
+            title: beach[0],
+            zIndex: beach[3]
+          });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4FFaIRnXDGcahEa6ABUjMHKF7SRfD5so&callback=initMap">
+    </script>
+
+
+
+<div class="c-intention-map">
+  <header class="c-intention-map__header-wrap">
+    <h1 itemprop="headline" class="c-page-title c-intention-map__header">Mapa pirátských plánů</h1>
+  </header>
+
+  <!-- Article -->
+  <article itemtype="http://schema.org/BlogPosting" itemscope="">
+    <link itemprop="mainEntityOfPage" href="{{ page.url }}">
+    {% if site.env.MAPBOX_ACCESS_TOKEN %}
+      <div class="__vue-root" data-app="IntentionMap" data-accesstoken="{{ site.env.MAPBOX_ACCESS_TOKEN }}" data-dataset="https://raw.githubusercontent.com/pirati-web/praha11.pirati.cz/master/intention-map/map.geojson" data-ideaform="https://goo.gl/forms/wKSPmWNDzgRiUxLN2" data-colors="auta:wisteria,brownfield:alizarin,cyklo:peterRiver,veřejný prostor:carrot,MHD:midnightBlue,pěší:emerald,rekreace:sunFlower"></div>
+    {% endif %}
+  </article>
+  <!-- /Article -->
+</div>

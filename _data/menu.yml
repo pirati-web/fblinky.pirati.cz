@@ -13,15 +13,12 @@ main:
   - link: /
     name: Úvod
     class: hide-for-medium    
-  - link: /nove/
-    name: Nové
-    match: nove
-  - link: /clenove/
-    name: Členové
-    match: clenove
-  - link: /ms-kraje/
-    name: MS & Kraje
-    match: ms-kraje
+  - link: /mistni-sdruzeni/
+    name: Místní sdružení
+    match: mistni-sdruzeni
+  - link: /soukrome-profily/
+    name: Soukromé profily
+    match: soukrome-profily
   - link: /mapa/
     name: Mapa
     match: mapa   

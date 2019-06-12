@@ -1,3 +1,4 @@
+{% if include.paginator.total_pages > 1 %}
 <ul class="c-pagination text-center" role="navigation" aria-label="Pagination">
   {% if include.paginator.page != 1 %}
   <li class="c-pagination__previous c-pagination__link">
@@ -38,3 +39,4 @@
   </li>
   {% endif %}
 </ul>
+{% endif %}
