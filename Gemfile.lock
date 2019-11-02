@@ -104,8 +104,12 @@ GEM
     mini_magick (4.9.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    nokogiri (1.10.1)
+    nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
+    octopress-hooks (2.6.2)
+      jekyll (>= 2.0)
+    octopress-paginate (1.2.0)
+      octopress-hooks
     parallel (1.13.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -153,6 +157,7 @@ DEPENDENCIES
   jekyll-theme-pirati (= 7.4.0)
   json
   mini_magick
+  octopress-paginate
   sprockets (= 4.0.0.beta8)
   tzinfo-data
   uglifier (~> 4.0.0)
