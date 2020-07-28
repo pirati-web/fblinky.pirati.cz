@@ -90,7 +90,7 @@ GEM
       jekyll (~> 3.6)
     jekyll-watch (2.1.2)
       listen (~> 3.0)
-    json (2.1.0)
+    json (2.3.0)
     kramdown (1.17.0)
     liquid (4.0.1)
     liquid-tag-parser (1.9.0)
@@ -106,6 +106,10 @@ GEM
     minitest (5.11.3)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    octopress-hooks (2.6.2)
+      jekyll (>= 2.0)
+    octopress-paginate (1.2.0)
+      octopress-hooks
     parallel (1.13.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -153,6 +157,7 @@ DEPENDENCIES
   jekyll-theme-pirati (= 7.4.0)
   json
   mini_magick
+  octopress-paginate
   sprockets (= 4.0.0.beta8)
   tzinfo-data
   uglifier (~> 4.0.0)
